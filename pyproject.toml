@@ -1,0 +1,36 @@
+[tool.poetry]
+authors = ["Flynn <wphestiraid@gmail.com>"]
+description = "프로그래문제 풀이"
+name = "programmers-py"
+version = "0.1.0"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+[tool.poetry.dev-dependencies]
+black = "^22.6.0"
+isort = "^5.10.1"
+pre-commit = "^2.20.0"
+pycln = "^2.1.1"
+pyright = "^1.1.266"
+pytest = "^7.1.2"
+
+[build-system]
+build-backend = "poetry.core.masonry.api"
+requires = ["poetry-core>=1.0.0"]
+
+[tool.flake8]
+max-line-length = 120
+
+[tool.isort]
+force_grid_wrap = 0
+include_trailing_comma = true
+line_length = 120
+multi_line_output = 3
+use_parentheses = true
+
+[tool.black]
+include = '\.pyi?$'
+line-length = 120
+skip-string-normalization = true
+target-version = ['py310']
