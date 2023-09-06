@@ -22,4 +22,32 @@ requires = ["poetry-core>=1.0.0"]
 include = '\.pyi?$'
 line-length = 120
 skip-string-normalization = true
-target-version = ['py310']
+target-version = ['py311']
+preview = true
+
+[tool.pyright]
+venvPath = "."
+venv = ".venv"
+reportGeneralTypeIssues = false
+
+[tool.ruff]
+select = [
+    "E",  # pycodestyle errors
+    "W",  # pycodestyle warnings
+    "F",  # pyflakes
+    "I",  # isort
+    "C",  # flake8-comprehensions
+    "B",  # flake8-bugbear
+    "UP", # pyupgrade
+    "PL", # pylint
+]
+ignore = [
+    "E501",    # line too long, handled by black
+    "E711",    # Comparison to None should be cond is None
+    "E712",    # Comparison to True should be cond is True or if cond:
+    "B008",    # do not perform function calls in argument defaults
+    "C901",    # too complex
+    "PLR0913", # too many arguments to function call
+]
+line-length = 120
+target-version = "py311"
